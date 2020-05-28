@@ -4,4 +4,8 @@ on:
     types: [created]
 jobs:
   printing: 
-  run: echo This event is a pull request that had an assignee removed.
+    name: just print
+    runs-on: [ubuntu-latest]
+    
+    steps:
+      - run: echo This is comment exec.
