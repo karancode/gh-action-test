@@ -8,5 +8,6 @@ jobs:
     runs-on: [ubuntu-latest]
     
     steps:
-      - if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
-      - run: echo This is comment exec.
+      - name: huh
+        if: ${{ github.event_name == 'issue_comment' && github.event.action == 'created' }}
+        run: echo This is comment exec.
