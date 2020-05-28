@@ -1,7 +1,9 @@
 name: 'Trigger on PR comment'
 on:
+  pull_request:
+    branches: master
   issue_comment:
-    types: [created]
+    types: created
 jobs:
   printing: 
     name: just print
