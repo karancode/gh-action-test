@@ -2,12 +2,11 @@ name: 'Trigger on PR comment'
 on:
   pull_request:
     branches: master
-  issue_comment:
-    types: created
 jobs:
   printing: 
     name: just print
     runs-on: [ubuntu-latest]
     
     steps:
+      - if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
       - run: echo This is comment exec.
