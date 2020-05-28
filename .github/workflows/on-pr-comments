@@ -1,0 +1,7 @@
+name: 'Trigger on PR comment'
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  printing: 
+  run: echo This event is a pull request that had an assignee removed.
