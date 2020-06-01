@@ -1,7 +1,9 @@
 name: 'Trigger on PR comment'
 on:
   pull_request:
-    branches: master
+    types: [opened]
+  issue_comment:
+    types: [created]
 jobs:
   printing: 
     name: just print
@@ -9,5 +11,5 @@ jobs:
     
     steps:
       - name: huh
-        if: ${{ github.event_name == 'issue_comment' && github.event.action == 'created' }}
+        if: ${{ github.event_name == 'issue_comment' && github.event.action == 'created' && github.event.comment.body == 'trigger_on_me' }}
         run: echo This is comment exec.
