@@ -7,7 +7,7 @@ on:
 
 jobs:
   validate-data:
-    runs-on: self-hosted
+    runs-on: [self-hosted, own]
     steps:
       - uses: actions/checkout@v2
 
